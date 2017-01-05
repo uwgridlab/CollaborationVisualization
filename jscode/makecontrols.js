@@ -44,9 +44,7 @@ function handleClick(event){
 
     var subsetMatrix = math.sqrt(math.add(math.square(matrixR),math.square(matrixI)));
     var matrixMeanArray = math.squeeze(math.mean(subsetMatrix,0)).valueOf();
-                plotHistUpdate(matrixMeanArray,bin_size)
-                var handleClickOnce = true;
-                return false;
+
             }
 
 
@@ -133,8 +131,9 @@ var genLabels = function() {
             "#CC0033","#CE0014","#0032CD","#7F00AE","#AE0091","#D0007C",
             "#F60075","#F8006A","#F90060","#FB0055"]);
             // L*a*b equal luminance
-    
-    regions_global = regions_seq;
+
+    //regions_seq = regions_file
+   // regions_global = regions_file;
 }
 
 // read in data, using initial guys
@@ -186,7 +185,7 @@ var initializeRender = function(error, regions_in, fulldata) {
     d3.select("#rerender")
         .on("click", function() {
             update();
-            
+
                 freqrange = d3.select("#freqrange").property("value").split(" - ");
     mapsignangle = d3.scale.linear();
         freqrange = d3.select("#freqrange").property("value").split(" - ");
@@ -196,12 +195,12 @@ var initializeRender = function(error, regions_in, fulldata) {
             0, 1/3, 2/3, 1])
         .range([-math.pi, -math.pi*2/3, -math.pi/3,
             0, math.pi/3, math.pi*2/3, math.pi]);
-    
+
     f1 = freqrange[0],
         f2 = freqrange[1],
         typeNum = d3.select("#opts").node().value,
         showSelf = d3.select('#showSelf').node().value;
-                
+
     freqRange = math.range(f1,f2);
     locsRange = math.range(0,numLocs);
      indexR =  math.index(freqRange,locsRange,locsRange,math.range(0,1));
@@ -219,8 +218,6 @@ var initializeRender = function(error, regions_in, fulldata) {
         console.log(bin_size)
      }
 */
-                plotHistUpdate(matrixMeanArray,bin_size);
-
             }
         );
 
@@ -241,7 +238,7 @@ var initializeRender = function(error, regions_in, fulldata) {
         plotHistUpdate(matrixMeanArray,bin_size)
     });
  */
-        
+
     // Dynamic slider generation
     $(function() {
         $( "#freqslider" ).slider({
@@ -294,19 +291,14 @@ var initializeRender = function(error, regions_in, fulldata) {
     var subsetMatrix = math.sqrt(math.add(math.square(matrixR),math.square(matrixI)));
     var matrixMeanArray = math.squeeze(math.mean(subsetMatrix,0)).valueOf();
 
-    bin_size = 15; 
-    var handleClickOnce = false;
-    plotHistInitialize(matrixMeanArray,bin_size);
     //////////////
     update();
     // renderChord(regions_global, matrixMeanArray, colormode);
 
     //temporary values to initialize bar
-    var temp_bar = math.zeros(numFreqs,numLocs,numLocs,2);
 
 
     //plot bar
-    plotBars(temp_bar, 0, 0);
 
     // buttonFreq
     //         .on("click",function(){

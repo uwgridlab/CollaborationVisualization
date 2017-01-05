@@ -72,8 +72,8 @@
 
                     <p>
                         <select id = "labelmode">
-                            <option value="labelseq" selected>Label with seq</option>
-                            <option value="labelfile">Label from file</option>
+                            <option value="labelfile" selected>Label from file</option>
+                            <option value="labelseq" >Label with seq</option>
                         </select>
 
                         <select id = "colormode">
@@ -98,20 +98,17 @@
     </div>
 
     <div class="circlechart"></div>
-    <div class="barchart"></div>
-    <div class="histogram"></div>
     <script src="jscode/makecontrols.js"></script>
     <script src="jscode/plotchords.js"></script>
-    <script src="jscode/bar.js"></script>
+
     <script src="jscode/filedroppage.js"></script>
-    <script src="jscode/histogram.js"></script>
 
 
     <script>
         // Load files and start
         d3_queue.queue()
                 .defer(d3.csv, "data/regions_old.csv")
-                .defer(d3.json, "data/ICCplv.txt")
+                .defer(d3.json, "collaborationNoNamesConverted.txt")
                 .await(initializeRender);
     </script>
 </div>

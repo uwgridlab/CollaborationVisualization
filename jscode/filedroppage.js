@@ -55,7 +55,7 @@ zone.event('send', function (files) {
                         " - " + $( "#pruneslider" ).slider( "values", 1 ) );
                 });
 
-                genLabels();
+               genLabels();
                 update();
 
                 ////// 11-10-2016 - auto update histogram
@@ -83,8 +83,6 @@ zone.event('send', function (files) {
 
     subsetMatrix = math.sqrt(math.add(math.square(matrixR),math.square(matrixI)));
     matrixMeanArray = math.squeeze(math.mean(subsetMatrix,0)).valueOf();
-
-     plotHistUpdate(matrixMeanArray,bin_size);
 
             },
             function(e) {alert('Error reading matrix file!')},

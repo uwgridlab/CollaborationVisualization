@@ -155,11 +155,7 @@ var renderChord = function(regions, allfreqmean, colormode) {
    //   }
   });
 
-    // add on click
-    chord
-        .on("click", function(d){
-            plotBars(matrixData,d.source.index,d.target.index)
-        });
+
 
   // Pair chord fade nonhighlight
   region.on("mouseover", mouseover);
@@ -201,10 +197,10 @@ var threshChords = function(threshslide) {
 }
 
 var labelRegion = function(labelmode) {
-    if (labelmode == "labelseq")
-        regions_global = regions_seq;
-    else if (labelmode == "labelfile")
+    if (labelmode == "labelfile")
         regions_global = regions_file;
+    else if (labelmode == "labelseq")
+        regions_global = regions_seq;
     renderChord(regions_global, matrixMeanArray, colormode);
 }
 
