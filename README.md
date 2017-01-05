@@ -52,15 +52,7 @@ David and James both worked on the background literature review for the project.
 
 ## Running Instructions
 
-Follow the link below to arrive to the project homepage, from which the project can be run.
+ follow the link below to directly run the visualization.
 
-http://uwgridlab.github.io/Affinity/
-
-Alternatively, follow the link below to directly run the visualization.
-
-http://uwgridlab.github.io/Affinity/main.html
-
-Or download the repository, and run (if you have python 3) `python -m http.server 8888` and access this from http://localhost:8888/main.html . If you have python 2, run `python -m SimpleHTTPServer 8888` and access this from http://localhost:8888/main.html . 
-
-Additionally, download [more real-patient data](https://github.com/uwgridlab/Affinity/tree/master/data) to explore different network datasets in the visualizer via drag and drop file loading.
+http://uwgridlab.github.io/CollaborationVisualization/main.html
 
